@@ -20,7 +20,7 @@ int dfs(int pos, int fa, bool limit)
 int f(int n)    // 计算f(n)
 {
     int ans = 0, len = 1;
-    while (n)
+    while (n) 
     {
         ans += n % 10 * len;
         len *= 2;
