@@ -3,12 +3,12 @@
 #include <cstring>
 using namespace std;
 const int inf = 0x3f3f3f3f;
-double ans, dp[1<<10][32];  // dp[s][u]表示到达当前u节点（持有s的车票）的最小时间
+double ans, dp[1<<11][32];  // dp[s][u]表示到达当前u节点（持有s的车票）的最小时间
 int n, m, p, a, b;
 int t[20], dis[50][50];
 void solve()
 {
-    for (int i = 0; i < (1<<n); i++) fill(dp[i], dp[i]+m+1, inf);
+    for (int i = 0; i < (1<<n+1); i++) fill(dp[i], dp[i]+m+1, inf);
     dp[(1<<n)-1][a] = 0;    // 起点
     ans = inf;
     for (int S = (1<<n)-1; S >= 0; S--)
